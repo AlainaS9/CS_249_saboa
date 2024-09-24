@@ -1,11 +1,13 @@
 package edu.saboa.exercises03;
 
+import java.util.*;
+
 public class SimpleOregon {
     public static void main(String [] args){
         System.out.println("WELCOME!");
         Scanner input = new Scanner(System.in);
 
-        double totalFood = input.nexDouble();
+        double totalFood = input.nextDouble();
         int numPeople = input.nextInt();
         int ration = input.nextInt();
 
