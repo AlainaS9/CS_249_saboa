@@ -25,7 +25,7 @@ test {
 }
 
 application {
-    mainClass = "edu.saboa.exercises06.L33tSpeak"
+    mainClass = "edu.saboa.oregon.OregonTrail"
     mainModule = "exercisesmod"
 }
 
