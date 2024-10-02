@@ -11,7 +11,7 @@ public class OregonTrail {
 
         System.out.println("Enter starting food: ");
         int food = input.nextInt();
-       // supplies.addFood(food);
+        supplies.addFood(food);
         System.out.println(supplies);
 
         // TODO: Set who is in the party
