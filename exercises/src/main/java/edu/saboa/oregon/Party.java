@@ -13,8 +13,15 @@ public class Party {
     }
 
     public int getPartyCnt() {
+        int aliveCnt = 0;
+        for (int i = 0; i < people.length; i++) {
+            if (people[i].isAlive()) {
+                aliveCnt++;
+            }
+        }
         return aliveCnt;
     }
+
 
     public void killEveryone() {
         for(int i = 0; i < people.length; i++){
@@ -24,10 +31,13 @@ public class Party {
 
     public String toString() {
         String s = "PARTY: \n";
-        s += partyCnt + " souls alive.\n";
-        for(int i = 0; i < people.length; i++){
-            s += "* " + people[i] + "\n";
+        s += getPartyCnt() + " souls alive.\n";
+        for(Person p : people) {
+            s += "* " + p + "\n";
         }
+        // for(int i = 0; i < people.length; i++){
+        //      s += "* " + people[i] + "\n";
+        //}
         return s;
     }
 
