@@ -9,7 +9,7 @@ public class Matrix {
 
     }
 
-    public Matrix(double [][]) {
+    public Matrix(double [][] numbers) {
         m = new double[numbers.length][numbers[0].length];
         for(int i = 0; i < m.length; i++) {
             for(int j = 0; j < m[i].length; j++) {
@@ -59,5 +59,27 @@ public class Matrix {
             sb.append("\n");
         }
         return sb.toString();
+    }
+
+    public Matrix multiply(Matrix other) {
+        Matrix result = new Matrix(this.getRowCnt(), other.getColCnt());
+
+        for(int i = 0; i < result.getRowCnt(); i++) {
+            for(int j = 0; j < result.getColCnt(); j++) {
+                // result[i,j] = ...
+                for(int k = 0; k < this.getColCnt(); k++) {
+                    result.m[i][j] += this.m[i][k]*other.m[k][j];
+                }
+            }
+        }
+        return result;
+    }
+
+    public static Matrix makeTranslation2D(double offx, double offy) {
+        return new Matrix(new double[][] {
+                {1,0,offx},
+                {0,1,offy},
+                {0,0,1}
+        });
     }
 }
