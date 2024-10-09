@@ -19,8 +19,8 @@ public class OregonTrail {
         supplies.addFood(food);
         System.out.println(supplies);
 
-        // TODO: Set who is in the party
-        Party party = new Party();
+        // Set who is in the party
+        Party party = Party.askForPartyMembers(input);
 
         int milesTraveled = 0;
         double rations = 7.0;

@@ -18,6 +18,15 @@ public class Matrix {
         }
     }
 
+    public Matrix(Matrix other) {
+        m = new double [other.getRowCnt()][other.getColCnt()];
+        for(int i = 0; i < m.length; i++) {
+            for(int j = 0; j < m[i].length; j++) {
+                m[i][j] = other[i][j];
+            }
+        }
+    }
+
     public int getRowCnt() {
         return m.length;
 
@@ -81,5 +90,25 @@ public class Matrix {
                 {0,1,offy},
                 {0,0,1}
         });
+    }
+
+    public static Matrix makePoint2D(double x, double y) {
+        return new Matrix(new double[][] {
+            {x},
+            {y},
+                {1}
+        });
+    }
+
+    public String toPointString() {
+        StringBuilder sb = new StringBuilder();
+        for(int row = 0; row < (getRowCnt()-1); row++) {
+            if(row != 0) {
+                sb.append(", ");
+            }
+            sb.append(m[row][0]);
+        }
+        sb.append(")");
+        return sb.toString();
     }
 }
