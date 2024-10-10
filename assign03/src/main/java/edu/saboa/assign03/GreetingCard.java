@@ -3,24 +3,36 @@ package edu.saboa.assign03;
 import java.util.*;
 
 public class GreetingCard {
+    char boundaryChar;
+
     public GreetingCard(String [] lines, char boundaryChar) {
-        //TODO
+
+        setLines(lines);
+        setBoundaryChar(boundaryChar);
     }
 
     public char getBoundaryChar() {
-        //TODO
+
+        return boundaryChar;
     }
 
     public String getLines() {
-        //TODO
+        String concatLines = new String();
+
+
     }
 
     public void setBoundaryChar(char boundaryChar) {
-        //TODO
+        this.boundaryChar = boundaryChar;
     }
 
     public void setLines(String [] lines) {
-        //TODO
+        String [] newLines = new String [lines.length];
+
+        for(int i = 0; i < lines.length; i++) {
+            newLines[i] = lines[i];
+        }
+
     }
 
     public String generateBoundaryLine() {

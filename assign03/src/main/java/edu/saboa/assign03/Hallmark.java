@@ -5,7 +5,7 @@ import java.util.*;
 public class Hallmark {
     public static GreetingCard generateCard(Scanner input){
         System.out.println("Enter boundary character: ");
-        char boundaryChar = getBoundaryChar.input.nextLine();
+        char boundaryChar = input.nextLine().charAt(0);
 
         System.out.println("Enter number of lines: ");
         String line = input.nextLine();

@@ -9,7 +9,7 @@ public class Matrix {
 
     }
 
-    public Matrix(double [][]) {
+    public Matrix(double [][] numbers) {
         m = new double[numbers.length][numbers[0].length];
         for(int i = 0; i < m.length; i++) {
             for(int j = 0; j < m[i].length; j++) {
