@@ -22,7 +22,7 @@ public class Matrix {
         m = new double [other.getRowCnt()][other.getColCnt()];
         for(int i = 0; i < m.length; i++) {
             for(int j = 0; j < m[i].length; j++) {
-                m[i][j] = other[i][j];
+                m[i][j] = other.m[i][j];
             }
         }
     }

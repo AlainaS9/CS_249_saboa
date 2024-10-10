@@ -3,13 +3,19 @@ package edu.saboa.exercises10;
 import edu.saboa.exercises09.Matrix;
 
 public class Circle {
-    private double radius = 1.0;
-    private Matrix center = Matrix.makePoint2D(0,0);
+    private final double DEFAULT_RADIUS = 1.0;
+    private final Matrix DEFAULT_CENTER = Matrix.makePoint2D(0,0);
+
+    private double radius = DEFAULT_RADIUS;
+    private Matrix center = DEFAULT_CENTER;
 
     public Circle() {}
 
     public Circle(double radius) {
-        this.radius = radius;
+
+        this(radius, Matrix.makePoint2D(0,0));
+
+        System.out.println("Radius only Circle");
     }
 
     public Circle(double radius, Matrix center) {

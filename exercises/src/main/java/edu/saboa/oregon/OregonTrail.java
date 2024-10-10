@@ -24,8 +24,9 @@ public class OregonTrail {
 
         int milesTraveled = 0;
         double rations = 7.0;
-        int pace = 5;
         int dayCnt = 0;
+
+        WagonPace pace = WagonPace.NORMAL;
 
         while (!isGameOver(party, supplies, milesTraveled)) {
 
@@ -36,7 +37,7 @@ public class OregonTrail {
 
 
             // Add to distance
-            milesTraveled += pace;
+            milesTraveled += (int)pace.getMilesPerDay();
 
             dayCnt++;
 
@@ -49,7 +50,20 @@ public class OregonTrail {
 
             // Are ya winning son?
 
-            printStatus(dayCnt, milesTraveled, party, supplies);
+            printStatus(dayCnt, milesTraveled, party, supplies, pace);
+
+            // ask for change of pace
+            System.out.println("Change pace? [y/n]");
+            String ans = input.next();
+            if(ans.equals("y")) {
+                System.out.println("Select pace:");
+                for(int i = 0; i < WagonPace.values().length; i++) {
+                    System.out.println((i+1) + ": " + WagonPace.values()[i]);
+                }
+                int choice = input.nextInt();
+                choice--;
+
+            }
         }
     }
 
@@ -76,11 +90,12 @@ public class OregonTrail {
             }
         }
 
-        public static void printStatus (int dayCnt, int milesTraveled, Party party, Supplies supplies) {
+        public static void printStatus (int dayCnt, int milesTraveled, Party party, Supplies supplies, WagonPace pace) {
         String boundary = "*************************";
         System.out.println(boundary);
         System.out.println("DAY " + dayCnt);
         System.out.println(boundary);
+        System.out.println("CURRENT PACE: " + pace);
 
         System.out.println("Traveled " + milesTraveled + " miles");
         System.out.println(boundary);
