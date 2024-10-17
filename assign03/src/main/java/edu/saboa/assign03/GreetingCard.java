@@ -5,13 +5,11 @@ public class GreetingCard {
     private String [] thisLines;
 
     public GreetingCard(String [] lines, char boundaryChar) {
-
         setLines(lines);
         setBoundaryChar(boundaryChar);
     }
 
     public char getBoundaryChar() {
-
         return boundaryChar;
     }
 
