@@ -1,9 +1,8 @@
 package edu.saboa.assign03;
 
-import java.util.*;
-
 public class GreetingCard {
-    char boundaryChar;
+    private char boundaryChar;
+    private String [] thisLines;
 
     public GreetingCard(String [] lines, char boundaryChar) {
 
@@ -17,9 +16,13 @@ public class GreetingCard {
     }
 
     public String getLines() {
-        String concatLines = new String();
+        StringBuilder LineBuilder = new StringBuilder();
 
+        for(int i = 0; i < thisLines.length; i++) {
+            LineBuilder.append(thisLines[i]);
+        }
 
+        return LineBuilder.toString();
     }
 
     public void setBoundaryChar(char boundaryChar) {
@@ -27,28 +30,93 @@ public class GreetingCard {
     }
 
     public void setLines(String [] lines) {
-        String [] newLines = new String [lines.length];
+        thisLines = new String [lines.length];
 
         for(int i = 0; i < lines.length; i++) {
-            newLines[i] = lines[i];
+            thisLines[i] = lines[i] + "\n";
         }
 
     }
 
     public String generateBoundaryLine() {
-        StringBuilder boundaryLine = new StringBuilder();
+        StringBuilder BoundaryLine = new StringBuilder();
         for(int i = 0; i < 50; i++) {
-            boundaryLine.append(boundaryChar);
+            BoundaryLine.append(boundaryChar);
         }
-        boundaryLine.append("\n");
-        return boundaryLine.toString();
+        BoundaryLine.append("\n");
+        return BoundaryLine.toString();
     }
 
     public String generateCenteredLine(String text) {
-        //TODO
+        text = text.trim();
+        //i hate that newline
+
+        if(text.length() > 0){
+            text = " " + text + " ";
+        }
+
+        String paddingString = "";
+        int paddingNeeded;
+        int firstHalf;
+        int secondHalf;
+        paddingNeeded = 50 - text.length();
+        firstHalf = paddingNeeded / 2;
+        secondHalf = paddingNeeded - firstHalf;
+
+        for(int i = 0; i < firstHalf; i++) {
+            paddingString += boundaryChar;
+        }
+
+        paddingString += text;
+
+        for(int j = 0; j < secondHalf; j++) {
+            paddingString += boundaryChar;
+        }
+
+        paddingString += "\n";
+
+        return paddingString;
     }
 
     public String toString() {
-        //TODO
+        StringBuilder CardBuilder = new StringBuilder();
+        int lineCount;
+        int extraLines;
+        int currentLine = 0;
+        int linesLeft = thisLines.length;
+
+        for (int j = 0; j < thisLines.length; j += 5) {
+            if (!CardBuilder.isEmpty()) {
+                CardBuilder.append("\n");
+            }
+
+
+            for (int i = 0; i < 2; i++) {
+                CardBuilder.append(generateBoundaryLine());
+            }
+
+            if (linesLeft < 5) {
+                lineCount = linesLeft;
+                extraLines = 5 - lineCount;
+            } else {
+                lineCount = 5;
+                extraLines = 0;
+            }
+            for (int i = 0; i < lineCount; i++) {
+                CardBuilder.append(generateCenteredLine(thisLines[currentLine]));
+                linesLeft--;
+                currentLine++;
+            }
+            for (int i = 0; i < extraLines; i++) {
+                CardBuilder.append(generateBoundaryLine());
+            }
+
+            for (int i = 0; i < 2; i++) {
+                CardBuilder.append(generateBoundaryLine());
+            }
+        }
+
+            return CardBuilder.toString();
+
     }
 }
