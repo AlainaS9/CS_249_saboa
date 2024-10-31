@@ -42,4 +42,21 @@ public class Shape {
         s += ")";
         return s;
     }
+
+    public double getArea() {
+        return 0;
+    }
+
+  /*  @Override
+    public boolean equals(Object other) {
+        if(other instanceof Shape sother) {
+            return (filled == sother.filled &&
+
+        }
+        else {
+            return false;
+        }
+    }
+
+   */
 }

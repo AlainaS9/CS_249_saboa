@@ -111,4 +111,26 @@ public class Matrix {
         sb.append(")");
         return sb.toString();
     }
+
+    public boolean equals(Object obj) {
+
+        if(getRowCnt() == mobj.getRowCnt() && getColCnt() == mobj.getColCnt()) {
+            isEqual = true;
+
+            for(int i = 0; i < getRowCnt(); i++) {
+                for(int j = 0; j < getColCnt(); j++) {
+                    if(!MathUtil.isDoubleEqual(
+                            m[i][j],
+                            mobj.m[i][j])) {
+                        isEqual = false;
+                        break;
+                    }
+                }
+                if(!isEqual) {
+                    break;
+                }
+            }
+
+        }
+    }
 }
