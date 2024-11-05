@@ -111,7 +111,7 @@ public class Matrix {
         sb.append(")");
         return sb.toString();
     }
-
+/*
     public boolean equals(Object obj) {
 
         if(getRowCnt() == mobj.getRowCnt() && getColCnt() == mobj.getColCnt()) {
@@ -132,5 +132,5 @@ public class Matrix {
             }
 
         }
-    }
+    } */
 }
