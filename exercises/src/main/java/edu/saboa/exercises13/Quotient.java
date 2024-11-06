@@ -1,8 +1,13 @@
 package edu.saboa.exercises13;
 
+import java.io.IOException;
 import java.util.*;
 
 public class Quotient {
+    public static String readFromFile(String filename) {
+        throw new IOException("HELP!");
+    }
+
     public static int divide(int x, int y) {
         if(y != 0) {
             int r = x / y;
@@ -30,6 +35,9 @@ public class Quotient {
         }
         catch(InputMismatchException e) {
             System.err.println("Bad inputs.");
+        }
+        catch(Exception e) {
+            System.err.println(e);
         }
         System.out.println("DONE");
     }
