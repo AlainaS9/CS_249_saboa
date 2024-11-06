@@ -33,7 +33,7 @@ public class GameBoard {
     }
 
     public boolean isValidPosition(int row, int col) {
-        if((row >= 0 && row < charArray.length) && (col >= 0 && row < charArray[0].length)) {
+        if((row >= 0 && row < charArray.length) && (col >= 0 && col < charArray[0].length)) {
             return true;
         }
         else {
