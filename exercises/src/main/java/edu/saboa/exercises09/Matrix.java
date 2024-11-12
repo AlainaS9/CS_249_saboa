@@ -111,6 +111,11 @@ public class Matrix {
         sb.append(")");
         return sb.toString();
     }
+
+    public String to3DVertexOBJString() {
+        return "v " + m[0] + " " + m[1][0] + " " + m[2][0];
+    }
+
 /*
     public boolean equals(Object obj) {
 
@@ -133,4 +138,6 @@ public class Matrix {
 
         }
     } */
+
+
 }

@@ -33,13 +33,15 @@ public class Circle extends Shape {
         return radius;
     }
 
-    public void setRadius(double radius) {
-        throws InvalidRadiusException {
-            if (radius >= 0) {
-                this.radius = radius;
-            } else {
-                throw new InvalidRadiusException("Bad radius: " + radius);
-            }
+    public void setRadius(double radius)
+            throws InvalidRadiusException {
+
+        if(radius >= 0) {
+            this.radius = radius;
+        }
+        else {
+            throw new InvalidRadiusException(
+                    "Bad radius: " + radius);
         }
     }
 
@@ -53,11 +55,12 @@ public class Circle extends Shape {
     @Override
     public boolean equals(Object other) {
         if(other instanceof Circle otherCircle) {
-            return (MathUtil.isDoubleEqual(radius, otherCircle.radius) && super.equals(otherCircle));
-        }
+            return (MathUtil.isDoubleEqual(
+                    radius,
+                    otherCircle.radius)
+                    && super.equals(otherCircle));        }
         else {
             return false;
         }
-
     }
 }

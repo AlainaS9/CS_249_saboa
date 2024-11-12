@@ -1,6 +1,6 @@
 package edu.saboa.exercises13;
 
-public class InvalidRadiusException {
+public class InvalidRadiusException extends Exception {
     public InvalidRadiusException() {
         super();
     }

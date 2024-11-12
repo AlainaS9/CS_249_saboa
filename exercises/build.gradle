@@ -25,7 +25,7 @@ test {
 }
 
 application {
-    mainClass = "edu.saboa.exercises13.Quotient"
+    mainClass = "edu.saboa.exercises13.BunnyTime"
     mainModule = "exercisesmod"
 }
 
