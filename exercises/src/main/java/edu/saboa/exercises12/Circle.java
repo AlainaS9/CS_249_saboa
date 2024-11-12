@@ -1,6 +1,7 @@
 package edu.saboa.exercises12;
 import edu.saboa.exercises09.Matrix;
 import edu.saboa.exercises09.MathUtil;
+import edu.saboa.exercises13.InvalidRadiusException;
 
 public class Circle extends Shape {
     private double radius = 1.0;
@@ -30,6 +31,16 @@ public class Circle extends Shape {
 
     public double getRadius() {
         return radius;
+    }
+
+    public void setRadius(double radius) {
+        throws InvalidRadiusException {
+            if (radius >= 0) {
+                this.radius = radius;
+            } else {
+                throw new InvalidRadiusException("Bad radius: " + radius);
+            }
+        }
     }
 
     @Override
