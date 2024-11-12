@@ -60,4 +60,13 @@ public class OBJModel {
             }
         }
     }
+
+    public void applyTransformation(Matrix M) {
+        for(int i = 0; i < vertices.size(); i++) {
+            Matrix v = vertices.get(i);
+            v = M.multiply(v);
+            vertices.set(i, v);
+        }
+    }
+
 }
