@@ -94,10 +94,22 @@ public class Matrix {
         });
     }
 
-    public static Matrix makePoint2D(double x, double y) {
+    public static Matrix makePoint2D(double x,
+                                     double y) {
         return new Matrix(new double[][] {
                 {x},
                 {y},
+                {1}
+        });
+    }
+
+    public static Matrix makePoint3D(double x,
+                                     double y,
+                                     double z) {
+        return new Matrix(new double[][] {
+                {x},
+                {y},
+                {z},
                 {1}
         });
     }
@@ -113,6 +125,35 @@ public class Matrix {
         }
         sb.append(")");
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean isEqual = false;
+        if(obj instanceof Matrix mobj) {
+            //Matrix mobj = (Matrix)obj;
+            if( getRowCnt() == mobj.getRowCnt() &&
+                getColCnt() == mobj.getColCnt()) {
+
+                isEqual = true;
+                for(int i = 0; i < getRowCnt(); i++) {
+                    for(int j = 0; j < getColCnt(); j++) {
+                        if(!MathUtil.isDoubleEqual(
+                                m[i][j],
+                                mobj.m[i][j])) {
+                            isEqual = false;
+                            break;
+                        }
+                    }
+                    if(!isEqual) {
+                        break;
+                    }
+                }
+
+            }
+
+        }
+        return isEqual;
     }
 
 }
