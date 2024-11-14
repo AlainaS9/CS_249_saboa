@@ -92,10 +92,10 @@ public class Matrix {
         });
     }
 
-    public static Matrix makeScaling3D(double sx, double sy, double sz) {
+ /*   public static Matrix makeScaling3D(double sx, double sy, double sz) {
 
     }
-
+*/
     public static Matrix makePoint2D(double x, double y) {
         return new Matrix(new double[][] {
             {x},

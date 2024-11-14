@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class Quotient {
-    public static String readFromFile(String filename) {
+    public static String readFromFile(String filename) throws IOException {
         throw new IOException("HELP!");
     }
 

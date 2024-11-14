@@ -30,8 +30,8 @@ public class OBJModel {
                         double x = parse.nextDouble();
                         double y = parse.nextDouble();
                         double z = parse.nextDouble();
-                        Matrix v = Matrix.makePoint2D(x,y,z);
-                        vertices.add(v);
+                        //Matrix v = Matrix.makePoint2D(x,y,z);
+                        //vertices.add(v);
                     }
                     else if(token.equals("f")) {
                         // Face
@@ -55,9 +55,9 @@ public class OBJModel {
                 output.println(v.to3DVertexOBJString());
             }
 
-            for(Face f: faces) {
+          /*  for(Face f: faces) {
                 output.println(f.toFaceOBJString());
-            }
+            } */
         }
     }
 
