@@ -1,12 +1,12 @@
 package edu.saboa.assign04;
 
 public class Box {
-    int startRow;
-    int startCol;
-    int endRow;
-    int endCol;
-    boolean filled;
-    char drawChar;
+    private int startRow;
+    private int startCol;
+    private int endRow;
+    private int endCol;
+    private boolean filled;
+    private char drawChar;
 
     public Box(int sr, int sc, int er, int ec, boolean filled, char drawChar) {
         startRow = sr;
