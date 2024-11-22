@@ -25,7 +25,7 @@ test {
 }
 
 application {
-    mainClass = "edu.saboa.exercises15.strategy.BearSim"
+    mainClass = "edu.saboa.exercises15.observer.Gotham"
     mainModule = "exercisesmod"
 }
 
