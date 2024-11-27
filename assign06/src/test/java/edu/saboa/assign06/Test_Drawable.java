@@ -1,5 +1,5 @@
-package edu.realemj.assign06;
-import edu.realemj.assign04.GameBoard;
+package edu.saboa.assign06;
+import edu.saboa.assign04.GameBoard;
 //NOTE: CHANGE realemj to YOUR SITNETID!!!
 import org.testng.annotations.Test;
 
