@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Woods {
 
-    ArrayList<Giant> giantsList = new ArrayList<>();
+    private ArrayList<Giant> giantsList = new ArrayList<>();
 
     public Giant createGiant(String name, String typeName) {
         if(name.isEmpty()) {
